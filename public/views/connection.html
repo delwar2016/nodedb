@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Report Generator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6" style="float: none; margin: 0 auto; margin-top: 100px;">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <ul class="nav nav-tabs">
+                  <li class="active"><a href="#connect" data-toggle="tab" aria-expanded="true">Connection</a>
+                  </li>
+                  <li class=""><a href="#authentication" data-toggle="tab" aria-expanded="false">Authentication</a>
+                  </li>
+                  <li class=""><a href="#advanced" data-toggle="tab" aria-expanded="false">Advanced</a>
+                  </li>
+                  <li class=""><a href="#ssl" data-toggle="tab" aria-expanded="false">SSL</a>
+                  </li>
+                  <li class=""><a href="#ssh" data-toggle="tab" aria-expanded="false">SSH</a>
+                  </li>
+                </ul>
+
+                <div class="tab-content">
+                  <br/>
+                  <div class="tab-pane fade active in" id="connect">
+                    <form class="form-horizontal" role="form">
+                      <div class="form-group">
+                        <label  class="col-sm-2 control-label" for="name">Name</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="name" value="New Connection"/>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="col-sm-2 control-label" for="address" >Address</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="address" value="localhost"/>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="col-sm-2 control-label" for="port" >Port</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="port" value="27017"/>
+                        </div>
+                      </div>
+                    </form>
+
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-primary pull-left">Test</button>
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save</button>
+                    </div>
+                  </div>
+
+                  <div class="tab-pane fade" id="authentication">
+                    <form class="form-horizontal" role="form">
+                      <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                          <div class="checkbox">
+                            <label>
+                              <input type="checkbox"/>
+                              Perform Authentication
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label  class="col-sm-2 control-label" for="database">Database</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="database" value="admin" />
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label  class="col-sm-2 control-label" for="username">User Name</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="username" />
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="col-sm-2 control-label" for="password" >Password</label>
+                        <div class="col-sm-10">
+                          <input type="password" class="form-control" id="password" />
+                        </div>
+                      </div>
+                    </form>
+
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-primary pull-left">Test</button>
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save</button>
+                    </div>
+                  </div>
+
+                  <div class="tab-pane fade" id="advanced">
+                    <form class="form-horizontal" role="form">
+                      <div class="form-group">
+                        <label  class="col-sm-2 control-label" for="default_database">Default Database</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="default_database"/>
+                        </div>
+                      </div>
+                    </form>
+
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-primary pull-left">Test</button>
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save</button>
+                    </div>
+                  </div>
+
+                  <div class="tab-pane fade" id="ssl">
+                    <form class="form-horizontal" role="form">
+                      <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                          <div class="checkbox">
+                            <label>
+                              <input type="checkbox"/>
+                              Use SSL protocol
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label  class="col-sm-2 control-label" for="ssl_certificate">SSL Certificate</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="ssl_certificate" />
+                        </div>
+                      </div>
+                    </form>
+
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-primary pull-left">Test</button>
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save</button>
+                    </div>
+                  </div>
+
+                  <div class="tab-pane fade" id="ssh">
+                    <form class="form-horizontal" role="form">
+                      <div class="form-group">
+                        <div class="col-sm-offset-4 col-sm-10">
+                          <div class="checkbox">
+                            <label>
+                              <input type="checkbox"/>
+                              Use SSH tunnel
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="col-sm-4 control-label" for="ssh_address">SSH Address</label>
+                        <div class="col-sm-6">
+                          <input type="text" class="form-control" id="ssh_address"/>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="col-sm-4 control-label" for="ssh_port">SSH Port</label>
+                        <div class="col-sm-6">
+                          <input type="text" class="form-control" id="ssh_port" />
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="col-sm-4 control-label" for="ssh_user_name" >SSH User Name</label>
+                        <div class="col-sm-6">
+                          <input type="text" class="form-control" id="ssh_user_name" />
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="col-sm-4 control-label" for="ssh_auth_method" >SSH Auth Method</label>
+                        <div class="col-sm-6">
+                          <select class="form-control" id="ssh_auth_method">
+                            <option>Password</option>
+                            <option>Private key</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="col-sm-4 control-label" for="user_password" >User Password</label>
+                        <div class="col-sm-6">
+                          <input type="password" class="form-control" id="user_password" />
+                        </div>
+                      </div>
+                    </form>
+
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-primary pull-left">Test</button>
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
